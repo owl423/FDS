@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Vue JS - 사용자 등록 카드 컴포넌트</title>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/vue-demo.css">
+</head>
+<body>
+
+  <div id="app" v-cloak>
+
+    <app-card>
+      <template slot="card-headline">My Card</template>
+      <ul>
+        <li>hey</li>
+        <li>hey</li>
+        <li>hey</li>
+        <li>hey</li>
+      </ul>
+      <template slot="card-footer-item-list">
+        <a class="card-footer-item">Update</a>
+        <a class="card-footer-item">Look</a>
+        <a class="card-footer-item">Remove</a>
+      </template>
+    </app-card>
+    <hr>
+    <app-card>
+      <template slot="card-headline">Your Card</template>
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">John Smith</p>
+        <p class="subtitle is-6">@johnsmith</p>
+      </div>
+    </app-card>
+    <hr>
+    <app-card></app-card>
+
+  </div>
+
+<!-- CDN: Vue -->
+<script src="https://unpkg.com/vue@2.2.4/dist/vue.js"></script>
+<!-- Vue Control File -->
+<script>
+  var Card = {
+    template: `
+      <div class="card">
+        <header class="card-header">
+          <h2 class="card-header-title">
+            <slot name="card-headline">Default Card</slot>
+          </h2>
+          <a class="card-header-icon">
+            <span class="icon">
+              <i class="fa fa-angle-down" aria-label="card folding"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <slot>
+              <div class="media">
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <a>@bulmaio</a>. <a>#css</a> <a>#responsive</a>
+                  <br>
+                  <small>11:09 PM - 1 Jan 2016</small>
+                </div>
+              </div>
+            </slot>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <slot name="card-footer-item-list">
+            <a class="card-footer-item">Save</a>
+            <a class="card-footer-item">Edit</a>
+            <a class="card-footer-item">Delete</a>
+          </slot>
+        </footer>
+      </div>
+    `
+  };
+
+  var vm = new Vue({
+    el: '#app',
+    components: {
+      'app-card': Card
+    }
+  });
+</script>
+</body>
+</html>

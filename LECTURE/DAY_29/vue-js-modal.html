@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <title>Vue JS - Modal 컴포넌트</title>
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/vue-demo.css">
+</head>
+<body>
+
+  <div id="app" v-cloak>
+    <app-modal v-if="is_visble" @close="closeModal"></app-modal>
+  </div>
+
+<!-- CDN: Vue -->
+<script src="https://unpkg.com/vue@2.2.4/dist/vue.js"></script>
+<!-- Vue Control File -->
+<script>
+
+// Vue.component('app-modal', );
+
+
+  // 부모
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      is_visble: true
+    },
+    methods: {
+      closeModal: function() {
+        this.is_visble = false;
+      }
+    },
+    // 자식
+    components: {
+      'app-modal': {
+        template: `
+          <div class="modal is-active">
+            <div class="modal-background" @click="$emit('close')"></div>
+            <div class="modal-content">
+              <div class="box">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta excepturi quasi alias,
+                aperiam ad mollitia quis beatae assumenda recusandae cumque.
+              </div>
+            </div>
+            <button class="modal-close" @click="$emit('close')"></button>
+          </div>
+        `,
+        data: function() {
+          return {}
+        },
+        methods: {}
+      }
+    }
+  });
+</script>
+</body>
+</html>
