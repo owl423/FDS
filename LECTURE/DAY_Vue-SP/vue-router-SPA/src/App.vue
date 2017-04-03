@@ -1,10 +1,23 @@
 <template>
   <div id="app" class="container">
-    <h1><abbr title="Single Page Application">SPA</abbr></h1>
-    <router-view name="gnb"></router-view>
-    <transition name="slide" mode="out-in">
-      <router-view></router-view>
-    </transition>
+
+    <div class="columns is-desktop">
+
+      <div class="column is-2">
+        <h1 class="title is-1">
+          <abbr title="Single Page Application">{{ app_name }}</abbr>
+        </h1>
+        <router-view name="gnb"></router-view>
+      </div>
+
+      <div class="column is-8 is-offset-1">
+        <transition name="slide" mode="out-in">
+          <router-view></router-view>
+        </transition>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -12,17 +25,19 @@
 export default {
   name: 'app',
   data () {
-    return {}
+    return {
+      app_name: 'SPA'
+    }
   }
 }
 </script>
 
 <style lang="sass">
-.container
-  width: 940px
-  margin:
-    left: auto
-    right: auto
+@import '~bulma/bulma'
+
+#app
+  margin-top: 5rem
+  font-family: "Spoqa Han Sans"
 
 .router-link-active,
 .current-page a
