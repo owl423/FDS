@@ -1,6 +1,6 @@
 <template lang="pug">
   div.component
-    h1 {{ mine }}
+    h1 {{ mine }} ** {{ k }}
     label
       input(type="checkbox" v-model="message" value="오늘도")
       | 오늘도
@@ -22,14 +22,21 @@
 </template>
 
 <script>
+import EventBus from '../EventBus.js';
 import ChildComp from './ChildComp';
 export default {
   components: {
     'child': ChildComp
   },
+  mounted () {
+    EventBus.$on('to-evb', (a,b)=> {
+      this.k = a * b;
+    })
+  },
   props: ['name'],
   data () {
     return {
+      k: 0,
       // 부모에서 전달된 속성 유형이 참조형이라면
       // 객체, 배열이라면... 자식은 그 데이터를 그대로 사용하여
       // 수정하면 안된다.

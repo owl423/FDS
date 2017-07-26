@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import EventBus from '../EventBus';
+import EventBus from '../EventBus.js';
 export default {
   data () {
     return { count: this.initValue }

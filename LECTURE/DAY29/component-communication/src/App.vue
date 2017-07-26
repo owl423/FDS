@@ -1,10 +1,31 @@
 <template lang="pug">
   #app
 
-    h1 App에서 수신하는 Couter 컴포넌트의 목소리 (with Global EventBus 객체)
-    p {{ countfromEventBus }}
+    app-layout(lang="ru")
+      template(scope="o" slot="header")
+        h1.brand {{ o.brand }}
+        p Далеко-далеко за словесными стране.
+      ul
+        li
+          a(href="")
+            | Далеко-далеко за.
+        li
+          a(href="")
+            | Послушавшись, подпоясал!
+        li
+          a(href="")
+            | Лучше, встретил.
+      div(slot="footer")
+        p 서울시 신사동 &copy; 2017
+
+    //- h1 App에서 수신하는 Couter 컴포넌트의 목소리 (with Global EventBus 객체)
+    //- p {{ countfromEventBus }}
 
     total-counter(:counters="[12, 9, -3]" :app-mood="mood")
+
+    //- hr
+
+    //- ParentComp
 
     //- total-counter(:counters="[102, 1]")
     //- total-counter(:counters="[0]")
@@ -15,21 +36,22 @@
 </template>
 
 <script>
-import EventBus from './EventBus';
+import EventBus from './EventBus.js';
+import ParentComp from './components/ParentComp';
 import TotalCounter from './components/TotalCounter';
 import Counter from './components/Counter';
+import AppLayout from './components/AppLayout';
 
 export default {
   name: 'app',
   mounted () {
-    EventBus.$on('to-evb',(a,b)=>{
-      // console.log(this);
+    EventBus.$on('to-evb', (a,b)=> {
       this.a = a;
       this.b = b;
     });
   },
   components: {
-    TotalCounter, Counter
+    AppLayout, TotalCounter, Counter, ParentComp
   },
   data () {
     return {
