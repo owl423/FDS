@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ###### Front-End Develop SCHOOL
 
 <img src="https://cdn.rawgit.com/yamoo9/FDS/3rd_FDS/ASSETS/table-of-contents.png" alt="" align="right" width="134" height="160">
@@ -136,3 +137,27 @@ README.md 수업 자료를 정리한 후, 이 곳에 진행된 내용을 작성�
 ###### 대책:
 - 본 수업이 종료되는 24일 이후, 27일 일요일 촬영하여 28일 제공하는 방향으로 노력하겠다.
 - 참고로 1주일 중 유일하게 쉴 수 있는 일요일에만 촬영이 가능하며, 강의 녹화/편집/인코딩/업로드에는<br>상당한 시간이 요구된다는 점을 이해해주시길 바라며 본 수업 기간에는 수업에 집중하고 싶음을 이야기 드리고 싶다.
+=======
+###### 프론트엔드 개발 스쿨 4th × 패스트캠퍼스
+
+<img src="../ASSETS/note.jpg" alt width="145" height="130" align="right">
+
+## FDS 4th 수강생 학습 요약 정리
+
+[FDS 4기 분들이 매일 공부한 내용을 정리해서 올리는 저장소](https://github.com/owl423/FDS04_Summary)
+
+## 언어 레퍼런스(Reference)
+
+- [Node.js Express 템플릿엔진: Pug](https://pugjs.org) / [템플릿엔진 인기 순위](https://www.slant.co/topics/51/~best-javascript-templating-engines)
+- [CSS 프리프로세서: Sass](http://sass-lang.com)
+
+## Sass 프레임워크
+
+- [Sierra](http://sierra-library.github.io/)
+- [iotaCSS](https://www.iotacss.com/)
+- [Bulma](http://bulma.io/)
+
+## 스트리트 파이터 뷰
+
+[Street Fighter Vue](https://goo.gl/8oaaxC)
+>>>>>>> 316b154c282c45ea79a96e31096012503dc4b3c2
